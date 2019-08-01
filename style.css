@@ -1,0 +1,27 @@
+.flat-list {
+  display: flex;
+  flex-wrap: wrap;
+  counter-reset: flat-list;
+  list-style: none;
+  padding: 0;
+}
+
+.flat-list li {
+  margin: 0 0.125em;
+}
+.flat-list li::before {
+  counter-increment: flat-list;
+  content: counter(flat-list) " ";
+}
+
+.flat-list li:not(:last-child)::after {
+  content: " -";
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
